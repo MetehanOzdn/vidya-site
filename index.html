@@ -1,0 +1,1185 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Vidya Pflegedienst · Professionelle Pflege. Menschliche Nähe.</title>
+<meta name="description" content="Vidya Pflegedienst Mannheim – Ambulante Pflege im gesamten Rhein-Neckar-Gebiet. Inhaberin Ilknur Bilen. 24h erreichbar unter 0176 41687084." />
+<link rel="canonical" href="https://www.vidyapflegedienst.de/" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --lime:#c8f36b;
+  --lime-hover:#b6e654;
+  --forest:#0d1f16;
+  --forest-2:#152a1e;
+  --moss:#1e3a2a;
+  --sage:#8fa896;
+  --paper:#f2efe8;
+  --paper-2:#e8e4d9;
+  --ink:#0a1810;
+  --muted:#6d766f;
+  --red:#c53030;
+  --line:rgba(10,24,16,.08);
+  --ease:cubic-bezier(.22,1,.36,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,-apple-system,sans-serif;color:var(--ink);background:var(--paper);line-height:1.55;-webkit-font-smoothing:antialiased;font-weight:400}
+h1,h2,h3,h4{font-family:'Instrument Serif',serif;font-weight:400;line-height:1.02;letter-spacing:-.02em}
+a{color:inherit;text-decoration:none;transition:opacity .25s var(--ease)}
+img{max-width:100%;display:block}
+button{font-family:inherit;cursor:pointer;border:0;background:none}
+.wrap{max-width:1360px;margin:0 auto;padding:0 32px}
+
+/* ============ NAV ============ */
+.nav{position:fixed;top:20px;left:0;right:0;z-index:100;display:flex;justify-content:center;pointer-events:none}
+.nav__pill{background:rgba(13,31,22,.85);backdrop-filter:blur(20px) saturate(1.5);-webkit-backdrop-filter:blur(20px) saturate(1.5);border:1px solid rgba(255,255,255,.06);border-radius:100px;padding:8px 8px 8px 24px;display:flex;align-items:center;gap:30px;pointer-events:auto;box-shadow:0 20px 60px rgba(0,0,0,.15)}
+.nav__brand{display:flex;align-items:center;gap:10px;color:#fff;font-family:'Instrument Serif',serif;font-size:1.15rem;letter-spacing:.02em}
+.nav__brand .mark{width:28px;height:28px;border-radius:6px;overflow:hidden;background:#fff;display:grid;place-items:center}
+.nav__brand .mark img{width:100%;height:100%;object-fit:cover}
+.nav__brand::after{content:'';width:1px;height:18px;background:rgba(255,255,255,.15);margin:0 4px 0 10px}
+.nav__links{display:flex;gap:22px;font-size:.82rem;color:rgba(255,255,255,.75);letter-spacing:.02em}
+.nav__links a:hover{color:#fff}
+.nav__cta{background:var(--lime);color:var(--forest);padding:10px 18px 10px 20px;border-radius:100px;font-size:.82rem;font-weight:600;letter-spacing:.02em;display:inline-flex;align-items:center;gap:8px}
+.nav__cta:hover{background:var(--lime-hover);opacity:1}
+.nav__cta .arr{width:20px;height:20px;background:var(--forest);color:var(--lime);border-radius:50%;display:grid;place-items:center;font-size:11px}
+
+/* ============ HERO ============ */
+.hero{padding:120px 20px 20px;background:var(--paper)}
+.hero__stage{position:relative;background:var(--forest);border-radius:32px;overflow:hidden;min-height:88vh;max-height:860px;color:#fff;padding:60px}
+.hero__grain{position:absolute;inset:0;background-image:radial-gradient(circle at 1px 1px,rgba(255,255,255,.05) 1px,transparent 0);background-size:24px 24px;opacity:.5;pointer-events:none}
+.hero__photo{position:absolute;inset:0;overflow:hidden;border-radius:32px}
+.hero__photo img{width:100%;height:100%;object-fit:cover;object-position:center 30%;opacity:.75;filter:grayscale(.1) contrast(1.05)}
+.hero__photo::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,31,22,.45) 0%,rgba(13,31,22,.15) 40%,rgba(13,31,22,.95) 100%),linear-gradient(90deg,rgba(13,31,22,.6) 0%,transparent 50%)}
+
+.hero__meta{position:relative;z-index:2;display:flex;gap:28px;font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,.6);font-weight:500;max-width:60%}
+.hero__meta span{display:inline-flex;align-items:center;gap:8px}
+.hero__meta .sep{width:1px;height:14px;background:rgba(255,255,255,.2);align-self:center}
+.hero__meta .dot{width:6px;height:6px;background:var(--lime);border-radius:50%;box-shadow:0 0 12px var(--lime);animation:p 2s infinite}
+@keyframes p{0%,100%{opacity:1}50%{opacity:.4}}
+
+.hero__content{position:absolute;left:60px;right:60px;bottom:60px;z-index:2;display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:flex-end}
+.hero__slogan{font-size:.72rem;letter-spacing:.26em;text-transform:uppercase;color:var(--lime);font-weight:600;margin-bottom:24px;display:flex;align-items:center;gap:12px}
+.hero__slogan::before{content:'';width:40px;height:1px;background:var(--lime)}
+.hero__title{font-size:clamp(2.4rem,6.5vw,5.4rem);color:#fff;letter-spacing:-.03em}
+.hero__title em{font-style:italic;color:var(--lime);font-weight:400}
+.hero__side{display:flex;flex-direction:column;gap:24px;align-items:flex-start;max-width:380px}
+.hero__side p{color:rgba(255,255,255,.78);font-size:.95rem;line-height:1.6}
+.hero__cta{display:inline-flex;align-items:center;gap:14px;background:var(--lime);color:var(--forest);padding:14px 8px 14px 24px;border-radius:100px;font-weight:600;font-size:.88rem;letter-spacing:.02em}
+.hero__cta:hover{background:var(--lime-hover);opacity:1;transform:translateY(-2px)}
+.hero__cta .arr{width:34px;height:34px;background:var(--forest);color:var(--lime);border-radius:50%;display:grid;place-items:center;font-size:14px}
+
+.hero__badge{position:absolute;top:60px;right:60px;z-index:2;display:flex;align-items:center;gap:12px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);backdrop-filter:blur(20px);border-radius:100px;padding:8px 20px 8px 8px;font-size:.82rem}
+.hero__badge .avs{display:flex}
+.hero__badge .av{width:32px;height:32px;border-radius:50%;background:var(--sage);border:2px solid var(--forest);margin-left:-10px;overflow:hidden}
+.hero__badge .av:first-child{margin-left:0}
+.hero__badge .av img{width:100%;height:100%;object-fit:cover}
+.hero__badge b{color:#fff;font-weight:600}
+.hero__badge span{color:rgba(255,255,255,.65)}
+
+/* MARQUEE */
+.marquee{overflow:hidden;background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:20px 0;margin-top:20px}
+.marquee__track{display:flex;gap:60px;animation:scroll 32s linear infinite;white-space:nowrap;font-family:'Instrument Serif',serif;font-size:1.5rem;color:var(--muted)}
+.marquee__track em{color:var(--ink);font-style:italic}
+.marquee__track span::before{content:'✦';color:var(--lime);margin-right:60px;font-family:'Inter',sans-serif}
+@keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ============ WHO WE ARE ============ */
+.intro{padding:120px 0 60px}
+.intro__grid{display:grid;grid-template-columns:1fr 1.2fr;gap:80px;align-items:flex-start}
+.eye{display:inline-flex;align-items:center;gap:10px;font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);font-weight:500;margin-bottom:20px}
+.eye::before{content:'';width:32px;height:1px;background:var(--ink)}
+.intro h2{font-size:clamp(2.2rem,4.5vw,3.6rem)}
+.intro h2 em{font-style:italic;color:var(--muted)}
+.intro__text p{color:var(--muted);font-size:1rem;line-height:1.65;margin-top:20px}
+.intro__text p:first-of-type{color:var(--ink);font-size:1.15rem;font-family:'Instrument Serif',serif;line-height:1.4;font-style:italic}
+
+.ganz{margin-top:40px;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.ganz__item{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px;text-align:center}
+.ganz__item b{font-family:'Instrument Serif',serif;font-size:1.4rem;display:block;color:var(--moss)}
+.ganz__item span{display:block;font-size:.78rem;color:var(--muted);margin-top:4px;letter-spacing:.08em;text-transform:uppercase}
+
+/* ============ LOGO MEANING ============ */
+.logo-m{padding:60px 0 120px}
+.logo-m__inner{background:var(--forest);color:#fff;border-radius:32px;padding:60px;display:grid;grid-template-columns:.9fr 1.3fr;gap:60px;align-items:center;position:relative;overflow:hidden}
+.logo-m__inner::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle at 1px 1px,rgba(255,255,255,.03) 1px,transparent 0);background-size:24px 24px;pointer-events:none}
+.logo-m__visual{position:relative;z-index:2;aspect-ratio:1;background:#fff;border-radius:24px;display:grid;place-items:center;padding:40px;overflow:hidden}
+.logo-m__visual img{width:100%;height:100%;object-fit:contain}
+.logo-m__content{position:relative;z-index:2}
+.logo-m__content .eye{color:var(--sage)}
+.logo-m__content .eye::before{background:var(--lime)}
+.logo-m h2{color:#fff;font-size:clamp(2rem,4vw,3rem);margin-bottom:16px}
+.logo-m h2 em{font-style:italic;color:var(--sage)}
+.logo-m__quote{color:rgba(255,255,255,.75);font-style:italic;font-family:'Instrument Serif',serif;font-size:1.25rem;line-height:1.4;margin:24px 0;padding-left:20px;border-left:2px solid var(--lime)}
+.logo-m__quote cite{display:block;font-size:.82rem;color:var(--sage);margin-top:10px;letter-spacing:.1em;font-style:normal}
+.logo-m__symbols{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-top:32px}
+.sym{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:18px}
+.sym__ic{font-size:28px;margin-bottom:10px}
+.sym b{display:block;color:#fff;font-size:.95rem;margin-bottom:4px}
+.sym span{color:rgba(255,255,255,.6);font-size:.78rem;line-height:1.4}
+
+/* ============ WIR SIND STARK ============ */
+.stark{padding:120px 0;background:var(--paper-2);border-radius:32px;margin:0 20px}
+.stark__inner{max-width:1360px;margin:0 auto;padding:0 32px}
+.stark__head{text-align:center;max-width:720px;margin:0 auto 60px}
+.stark__head h2{font-size:clamp(2.4rem,5vw,4rem)}
+.stark__head h2 em{font-style:italic;color:var(--moss)}
+.stark__head p{color:var(--muted);margin-top:16px;font-size:1rem}
+.stark__groups{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px}
+.sg{background:#fff;border-radius:24px;padding:32px;border:1px solid var(--line)}
+.sg__h{font-family:'Instrument Serif',serif;font-size:1.3rem;font-style:italic;color:var(--moss);margin-bottom:24px;padding-bottom:16px;border-bottom:1px solid var(--line)}
+.sg__h b{font-style:normal;color:var(--ink);font-family:'Inter',sans-serif;letter-spacing:.3em;font-size:1.6rem;display:block;margin-bottom:4px;font-weight:700}
+.sg__letter{display:flex;gap:18px;padding:14px 0;align-items:flex-start}
+.sg__letter:not(:last-child){border-bottom:1px dashed var(--line)}
+.sg__l{font-family:'Instrument Serif',serif;font-size:2.2rem;color:var(--lime);background:var(--forest);width:48px;height:48px;border-radius:12px;display:grid;place-items:center;flex-shrink:0;line-height:1}
+.sg__t{font-weight:600;color:var(--ink);font-size:.92rem;margin-bottom:4px;line-height:1.3}
+.sg__p{color:var(--muted);font-size:.8rem;line-height:1.45}
+.stark__motto{text-align:center;margin-top:50px;font-family:'Instrument Serif',serif;font-size:clamp(1.6rem,3vw,2.4rem);font-style:italic;color:var(--moss)}
+.stark__motto b{font-style:normal;color:var(--ink);letter-spacing:.1em;font-weight:600;font-family:'Inter',sans-serif;background:var(--lime);padding:0 12px;border-radius:6px}
+
+/* ============ SERVICES ============ */
+.services{padding:120px 20px}
+.services__inner{background:var(--forest);color:#fff;border-radius:32px;padding:80px 60px;position:relative;overflow:hidden}
+.services__grain{position:absolute;inset:0;background-image:radial-gradient(circle at 1px 1px,rgba(255,255,255,.04) 1px,transparent 0);background-size:24px 24px;pointer-events:none}
+.services__head{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:flex-end;margin-bottom:60px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.1)}
+.services__eye{display:inline-flex;align-items:center;gap:10px;font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:var(--sage);font-weight:500;margin-bottom:16px}
+.services__eye::before{content:'';width:32px;height:1px;background:var(--lime)}
+.services h2{font-size:clamp(2.2rem,4.5vw,3.8rem);color:#fff}
+.services h2 em{font-style:italic;color:var(--sage)}
+.services__lead{color:rgba(255,255,255,.7);font-size:.95rem;max-width:400px;justify-self:end}
+
+.slist{position:relative;z-index:2;display:flex;flex-direction:column}
+.srow{display:grid;grid-template-columns:60px 1.3fr 1.5fr auto;gap:32px;padding:32px 8px;border-bottom:1px solid rgba(255,255,255,.1);align-items:flex-start;transition:all .3s var(--ease);cursor:pointer;position:relative}
+.srow:hover{padding-left:20px}
+.srow:hover .srow__t{color:var(--lime)}
+.srow:last-child{border-bottom:0}
+.srow__n{font-family:'Instrument Serif',serif;font-size:1.2rem;color:var(--sage);letter-spacing:.05em;padding-top:8px}
+.srow__t{font-family:'Instrument Serif',serif;font-size:1.9rem;color:#fff;transition:color .3s;letter-spacing:-.02em;line-height:1.1}
+.srow__t em{font-style:italic}
+.srow__t span{display:block;font-size:.78rem;color:var(--sage);letter-spacing:.1em;text-transform:uppercase;margin-top:6px;font-family:'Inter',sans-serif;font-weight:500}
+.srow__d{color:rgba(255,255,255,.65);font-size:.88rem;line-height:1.5;padding-top:12px}
+.srow__d b{color:#fff;font-weight:500;display:block;margin-top:6px;font-size:.82rem}
+.srow__arr{width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,.15);display:grid;place-items:center;color:#fff;transition:all .3s var(--ease);align-self:center}
+.srow:hover .srow__arr{background:var(--lime);color:var(--forest);border-color:var(--lime);transform:rotate(-45deg)}
+
+/* ============ GALLERY ============ */
+.gallery{padding:0 20px 120px}
+.gallery__head{max-width:1360px;margin:0 auto;padding:0 32px;display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:40px;flex-wrap:wrap;gap:20px}
+.gallery h2{font-size:clamp(2rem,4vw,3.2rem)}
+.gallery h2 em{font-style:italic;color:var(--muted)}
+.gallery__sub{color:var(--muted);font-size:.95rem;max-width:400px}
+.gallery__grid{max-width:1360px;margin:0 auto;padding:0 32px;display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:180px;gap:12px}
+.gcard{border-radius:16px;overflow:hidden;position:relative;background:var(--forest-2);cursor:pointer}
+.gcard img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease)}
+.gcard:hover img{transform:scale(1.05)}
+.gcard::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(13,31,22,.6));opacity:0;transition:opacity .3s}
+.gcard:hover::after{opacity:1}
+.gcard--w2{grid-column:span 2}
+.gcard--w3{grid-column:span 3}
+.gcard--h2{grid-row:span 2}
+.gcaption{position:absolute;left:16px;bottom:16px;z-index:2;color:#fff;font-family:'Instrument Serif',serif;font-size:1.1rem;font-style:italic;opacity:0;transform:translateY(8px);transition:all .3s var(--ease)}
+.gcard:hover .gcaption{opacity:1;transform:translateY(0)}
+
+/* ============ QUOTE ============ */
+.quote{padding:120px 32px;text-align:center;max-width:1000px;margin:0 auto}
+.quote__eye{display:inline-flex;align-items:center;gap:10px;font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-bottom:32px}
+.quote__eye::before,.quote__eye::after{content:'';width:32px;height:1px;background:var(--ink)}
+.quote__text{font-family:'Instrument Serif',serif;font-size:clamp(1.8rem,4vw,3rem);line-height:1.2;letter-spacing:-.02em}
+.quote__text em{font-style:italic;color:var(--muted)}
+.quote__text .hl{background:var(--lime);padding:0 10px;border-radius:6px;color:var(--forest)}
+.quote__author{margin-top:40px;font-size:.82rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.quote__author b{display:block;font-family:'Instrument Serif',serif;font-size:1.4rem;letter-spacing:0;text-transform:none;color:var(--ink);font-weight:400;margin-top:4px;font-style:italic}
+
+/* ============ PRESS & JOBS ============ */
+.pj{padding:0 20px 120px}
+.pj__inner{max-width:1360px;margin:0 auto;padding:0 32px;display:grid;grid-template-columns:1fr 1fr;gap:30px}
+.pj__card{background:#fff;border:1px solid var(--line);border-radius:24px;padding:40px;position:relative;overflow:hidden}
+.pj__card h2{font-size:clamp(1.8rem,3.5vw,2.6rem);margin-bottom:12px}
+.pj__card h2 em{font-style:italic;color:var(--muted)}
+.pj__card p{color:var(--muted);font-size:.95rem;margin-bottom:28px}
+.press-list{display:flex;flex-direction:column;gap:14px;margin-bottom:28px}
+.press-item{display:flex;gap:16px;padding:16px;background:var(--paper);border-radius:14px;align-items:center;transition:transform .25s var(--ease)}
+.press-item:hover{transform:translateX(4px)}
+.press-item__d{font-family:'Instrument Serif',serif;font-size:1.6rem;color:var(--moss);min-width:60px;text-align:center;line-height:1}
+.press-item__d span{display:block;font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-family:'Inter',sans-serif;margin-top:4px}
+.press-item__t{flex:1}
+.press-item__t b{display:block;font-weight:600;font-size:.95rem;color:var(--ink)}
+.press-item__t span{color:var(--muted);font-size:.82rem}
+.jobs-list{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px}
+.jchip{background:var(--paper);border:1px solid var(--line);padding:8px 14px;border-radius:100px;font-size:.82rem;color:var(--ink);font-weight:500}
+.jchip:nth-child(odd){background:var(--forest);color:#fff;border-color:transparent}
+.pj__cta{display:inline-flex;align-items:center;gap:12px;padding:12px 8px 12px 22px;background:var(--forest);color:#fff;border-radius:100px;font-size:.85rem;font-weight:500}
+.pj__cta .arr{width:30px;height:30px;background:var(--lime);color:var(--forest);border-radius:50%;display:grid;place-items:center;font-size:12px}
+.pj__cta:hover{background:var(--moss);opacity:1}
+
+/* ============ CONTACT FORM ============ */
+.contact{padding:0 20px 120px}
+.contact__inner{max-width:1360px;margin:0 auto;padding:0 32px;background:var(--forest);color:#fff;border-radius:32px;overflow:hidden;display:grid;grid-template-columns:1fr 1.1fr;gap:0;position:relative}
+.contact__info{padding:60px;position:relative;overflow:hidden}
+.contact__info::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle at 1px 1px,rgba(255,255,255,.04) 1px,transparent 0);background-size:24px 24px;pointer-events:none}
+.contact__info .eye{color:var(--sage);position:relative;z-index:2}
+.contact__info .eye::before{background:var(--lime)}
+.contact__info h2{color:#fff;font-size:clamp(2rem,3.5vw,2.8rem);position:relative;z-index:2}
+.contact__info h2 em{font-style:italic;color:var(--sage)}
+.contact__info > p{color:rgba(255,255,255,.75);margin-top:16px;font-size:.95rem;max-width:360px;position:relative;z-index:2}
+.contact__kv{position:relative;z-index:2;margin-top:40px;display:flex;flex-direction:column;gap:18px}
+.kv{display:flex;gap:14px;align-items:flex-start}
+.kv__ic{width:36px;height:36px;border-radius:10px;background:rgba(255,255,255,.08);display:grid;place-items:center;flex-shrink:0;font-size:16px;color:var(--lime)}
+.kv__t{flex:1}
+.kv__t small{display:block;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--sage);margin-bottom:4px}
+.kv__t a,.kv__t b{color:#fff;font-weight:500;font-family:'Instrument Serif',serif;font-size:1.15rem;letter-spacing:0}
+.kv__t span{display:block;font-size:.82rem;color:rgba(255,255,255,.6);margin-top:2px}
+
+.contact__form{background:var(--paper);color:var(--ink);padding:60px}
+.contact__form h3{font-size:1.6rem;margin-bottom:8px}
+.contact__form h3 em{font-style:italic;color:var(--moss)}
+.contact__form .lead{color:var(--muted);font-size:.9rem;margin-bottom:28px}
+.cf{display:flex;flex-direction:column;gap:16px}
+.cfield label{display:block;font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:8px}
+.cfield label .req{color:var(--red)}
+.cfield input,.cfield textarea{width:100%;padding:14px 16px;background:#fff;border:1px solid var(--line);border-radius:12px;font-family:'Inter',sans-serif;font-size:.95rem;color:var(--ink);transition:border-color .25s,box-shadow .25s}
+.cfield input:focus,.cfield textarea:focus{outline:none;border-color:var(--moss);box-shadow:0 0 0 3px rgba(30,58,42,.12)}
+.cfield textarea{resize:vertical;min-height:120px}
+.cf__captcha{display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:flex-end}
+.captcha__box{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 20px;font-family:'Instrument Serif',serif;font-size:1.4rem;letter-spacing:.3em;color:var(--moss);user-select:none;position:relative;overflow:hidden}
+.captcha__box::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(45deg,transparent,transparent 4px,rgba(13,31,22,.03) 4px,rgba(13,31,22,.03) 8px);pointer-events:none}
+.cf__consent{display:flex;gap:12px;align-items:flex-start;padding:14px;background:#fff;border:1px solid var(--line);border-radius:12px}
+.cf__consent input{margin-top:4px;accent-color:var(--moss);flex-shrink:0}
+.cf__consent label{font-size:.82rem;color:var(--muted);line-height:1.5;cursor:pointer}
+.cf__consent label a{color:var(--moss);text-decoration:underline;text-underline-offset:3px}
+.cf__warn{font-size:.78rem;color:var(--red);padding:12px 14px;background:#fef2f2;border-left:3px solid var(--red);border-radius:0 10px 10px 0}
+.cf__submit{background:var(--forest);color:#fff;padding:16px 10px 16px 28px;border-radius:100px;font-weight:600;font-size:.92rem;letter-spacing:.02em;display:inline-flex;align-items:center;gap:14px;align-self:flex-start;cursor:pointer;border:0;font-family:inherit}
+.cf__submit:hover{background:var(--moss);transform:translateY(-2px)}
+.cf__submit .arr{width:32px;height:32px;background:var(--lime);color:var(--forest);border-radius:50%;display:grid;place-items:center;font-size:14px}
+.cf__status{font-size:.88rem;padding:14px 16px;border-radius:12px;display:none}
+.cf__status.ok{display:block;background:var(--lime);color:var(--forest);font-weight:500}
+.cf__status.err{display:block;background:#fef2f2;color:var(--red);border:1px solid #fecaca}
+
+/* ============ LEGAL (Impressum + Datenschutz) ============ */
+.legal{padding:0 20px 80px}
+.legal__inner{max-width:1360px;margin:0 auto;padding:0 32px}
+.legal__head{text-align:center;margin-bottom:50px}
+.legal__head h2{font-size:clamp(2rem,3.5vw,2.8rem)}
+.legal__head h2 em{font-style:italic;color:var(--muted)}
+.legal__head p{color:var(--muted);margin-top:12px;font-size:.95rem;max-width:620px;margin-left:auto;margin-right:auto}
+.legal__tabs{display:flex;gap:4px;background:var(--paper-2);padding:4px;border-radius:100px;max-width:420px;margin:0 auto 32px}
+.legal__tab{flex:1;background:none;padding:12px 20px;border-radius:100px;font-size:.85rem;font-weight:600;color:var(--muted);cursor:pointer;transition:all .25s var(--ease);text-align:center}
+.legal__tab.is-active{background:var(--forest);color:#fff}
+.legal__panel{display:none;background:#fff;border:1px solid var(--line);border-radius:24px;padding:48px;max-width:1000px;margin:0 auto}
+.legal__panel.is-active{display:block}
+.legal__panel h3{font-family:'Instrument Serif',serif;font-size:1.5rem;margin:28px 0 12px;color:var(--moss)}
+.legal__panel h3:first-child{margin-top:0}
+.legal__panel h4{font-family:'Inter',sans-serif;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:20px 0 8px;font-weight:700}
+.legal__panel p,.legal__panel li{font-size:.9rem;color:var(--ink);line-height:1.6;margin-bottom:10px}
+.legal__panel ul{padding-left:20px}
+.legal__panel li{list-style:disc;margin-bottom:6px}
+.legal__panel a{color:var(--moss);text-decoration:underline;text-underline-offset:3px}
+.legal__panel .box{background:var(--paper);border-left:3px solid var(--moss);padding:14px 18px;border-radius:0 10px 10px 0;margin:14px 0;font-size:.88rem}
+.legal__panel .box.warn{border-color:var(--red);background:#fef2f2;color:var(--ink)}
+.legal__meta{display:grid;grid-template-columns:200px 1fr;gap:12px 24px;margin:14px 0;font-size:.88rem}
+.legal__meta dt{color:var(--muted);font-weight:600}
+.legal__meta dd{color:var(--ink)}
+
+/* ============ COOKIE BANNER ============ */
+.cookie{position:fixed;left:20px;right:20px;bottom:20px;z-index:200;background:var(--forest);color:#fff;border-radius:20px;padding:24px 28px;box-shadow:0 30px 80px rgba(0,0,0,.3);display:none;align-items:center;gap:24px;max-width:1200px;margin:0 auto;border:1px solid rgba(255,255,255,.08)}
+.cookie.is-shown{display:flex}
+.cookie__ic{width:48px;height:48px;border-radius:14px;background:var(--lime);color:var(--forest);display:grid;place-items:center;font-size:22px;flex-shrink:0}
+.cookie__t{flex:1}
+.cookie__t b{display:block;font-family:'Instrument Serif',serif;font-size:1.2rem;margin-bottom:4px}
+.cookie__t p{font-size:.85rem;color:rgba(255,255,255,.75);line-height:1.5}
+.cookie__t a{color:var(--lime);text-decoration:underline;text-underline-offset:3px}
+.cookie__act{display:flex;gap:10px;flex-shrink:0}
+.cookie__btn{padding:12px 22px;border-radius:100px;font-size:.85rem;font-weight:600;cursor:pointer;border:0;font-family:inherit;transition:all .25s var(--ease)}
+.cookie__btn--primary{background:var(--lime);color:var(--forest)}
+.cookie__btn--primary:hover{background:var(--lime-hover)}
+.cookie__btn--ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.2)}
+.cookie__btn--ghost:hover{background:rgba(255,255,255,.08)}
+
+/* ============ FAQ ============ */
+.faq{padding:100px 32px;background:var(--paper-2);border-radius:32px 32px 0 0;margin:0 20px}
+.faq__inner{max-width:1360px;margin:0 auto;padding:0 32px;display:grid;grid-template-columns:.9fr 1.4fr;gap:80px;align-items:flex-start}
+.faq h2{font-size:clamp(2rem,4vw,3.2rem)}
+.faq h2 em{font-style:italic;color:var(--muted)}
+.faq__sub{color:var(--muted);margin-top:20px;font-size:.95rem;max-width:340px}
+.faq__contact{margin-top:32px;padding-top:32px;border-top:1px solid var(--line)}
+.faq__contact b{font-family:'Instrument Serif',serif;font-size:1.5rem;display:block;margin-top:6px}
+.faq__contact span{font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.faq__em{display:block;margin-top:14px;color:var(--red);font-size:.82rem;font-weight:500}
+
+.qlist{display:flex;flex-direction:column;gap:2px}
+.q{background:#fff;border-radius:16px;overflow:hidden;transition:all .3s var(--ease)}
+.q summary{padding:24px 28px;display:flex;align-items:center;justify-content:space-between;gap:20px;cursor:pointer;list-style:none;font-family:'Instrument Serif',serif;font-size:1.25rem;letter-spacing:-.01em}
+.q summary::-webkit-details-marker{display:none}
+.q summary::after{content:'+';font-size:1.6rem;color:var(--muted);font-family:'Inter',sans-serif;font-weight:300;transition:transform .3s var(--ease);flex-shrink:0}
+.q[open] summary::after{transform:rotate(45deg);color:var(--moss)}
+.q[open]{background:var(--forest);color:#fff}
+.q[open] summary{color:#fff}
+.q[open] summary::after{color:var(--lime)}
+.q__body{padding:0 28px 28px;color:var(--muted);font-family:'Inter',sans-serif;font-size:.92rem;line-height:1.6}
+.q[open] .q__body{color:rgba(255,255,255,.75)}
+
+/* ============ FOOTER ============ */
+.footer{background:var(--forest);color:#fff;padding:80px 20px 24px}
+.footer__inner{max-width:1360px;margin:0 auto;padding:0 32px}
+.footer__top{display:grid;grid-template-columns:1.6fr 1fr;gap:60px;align-items:flex-end;padding-bottom:60px;border-bottom:1px solid rgba(255,255,255,.1)}
+.footer__cta{font-family:'Instrument Serif',serif;font-size:clamp(2.4rem,5vw,4rem);line-height:1.05;letter-spacing:-.02em}
+.footer__cta em{font-style:italic;color:var(--sage)}
+.footer__cta a{color:var(--lime);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:8px}
+.footer__cta a:hover{opacity:.85}
+.footer__bigcta{background:var(--lime);color:var(--forest);border-radius:100px;padding:20px 12px 20px 32px;display:inline-flex;align-items:center;gap:16px;font-weight:600;font-size:1rem;letter-spacing:.02em;align-self:flex-end}
+.footer__bigcta .arr{width:42px;height:42px;background:var(--forest);color:var(--lime);border-radius:50%;display:grid;place-items:center;font-size:16px}
+.footer__bigcta:hover{background:var(--lime-hover);opacity:1;transform:translateY(-2px)}
+
+.footer__grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.1fr;gap:40px;padding:48px 0}
+.footer__brand{display:flex;align-items:center;gap:12px;font-family:'Instrument Serif',serif;font-size:1.35rem}
+.footer__brand .mark{width:36px;height:36px;border-radius:8px;overflow:hidden;background:#fff}
+.footer__brand .mark img{width:100%;height:100%;object-fit:cover}
+.footer__about{color:rgba(255,255,255,.6);font-size:.88rem;margin-top:16px;max-width:320px;line-height:1.55}
+.footer__owner{margin-top:16px;padding-top:16px;border-top:1px solid rgba(255,255,255,.08);font-size:.8rem;color:rgba(255,255,255,.55)}
+.footer__owner b{color:#fff;display:block}
+.footer h5{color:var(--sage);font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;margin-bottom:20px;font-weight:600}
+.footer ul{list-style:none;display:flex;flex-direction:column;gap:12px}
+.footer li{font-size:.88rem;color:rgba(255,255,255,.75)}
+.footer li a{color:inherit}
+.footer li a:hover{color:var(--lime)}
+.footer li small{display:block;color:rgba(255,255,255,.4);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:2px}
+.footer__bot{padding-top:28px;display:flex;justify-content:space-between;align-items:center;font-size:.78rem;color:rgba(255,255,255,.5);letter-spacing:.02em;border-top:1px solid rgba(255,255,255,.05);flex-wrap:wrap;gap:16px}
+.footer__bot a{color:rgba(255,255,255,.5)}
+.footer__bot a:hover{color:var(--lime)}
+.footer__legal{font-size:.72rem;color:rgba(255,255,255,.4)}
+
+/* ============ RESPONSIVE ============ */
+@media(max-width:1024px){
+  .intro__grid,.logo-m__inner,.faq__inner,.pj__inner,.services__head,.contact__inner{grid-template-columns:1fr;gap:40px}
+  .stark__groups{grid-template-columns:1fr}
+  .logo-m__symbols{grid-template-columns:1fr 1fr 1fr}
+  .gallery__grid{grid-template-columns:repeat(3,1fr)}
+  .footer__grid{grid-template-columns:1fr 1fr}
+  .ganz{grid-template-columns:1fr 1fr 1fr}
+  .cookie{flex-direction:column;align-items:flex-start}
+  .legal__meta{grid-template-columns:1fr}
+}
+@media(max-width:720px){
+  .wrap{padding:0 20px}
+  .nav__links{display:none}
+  .nav__pill{padding:6px 6px 6px 16px;gap:10px}
+  .hero{padding:100px 12px 12px}
+  .hero__stage{padding:32px 24px;min-height:auto}
+  .hero__content{position:relative;left:auto;right:auto;bottom:auto;grid-template-columns:1fr;margin-top:60vh}
+  .hero__badge{top:24px;right:24px}
+  .hero__meta{flex-wrap:wrap;gap:12px;max-width:70%;font-size:.65rem}
+  .hero__meta .sep{display:none}
+  .hero__badge{top:16px;right:16px;padding:6px 14px 6px 6px;font-size:.72rem}
+  .hero__badge .av{width:24px;height:24px}
+  .intro{padding:80px 0 40px}
+  .ganz,.logo-m__symbols,.gallery__grid{grid-template-columns:1fr}
+  .gcard--w2,.gcard--w3,.gcard--h2{grid-column:auto;grid-row:auto}
+  .services__inner{padding:48px 24px}
+  .srow{grid-template-columns:40px 1fr auto;gap:16px}
+  .srow__d{display:none}
+  .srow__t{font-size:1.35rem}
+  .footer__top{grid-template-columns:1fr}
+  .footer__grid{grid-template-columns:1fr 1fr;gap:24px}
+  .footer__bot{flex-direction:column;gap:8px;text-align:center}
+  .faq{padding:60px 20px;margin:0 8px}
+  .faq__inner{padding:0}
+  .stark,.gallery__head{padding-left:20px;padding-right:20px}
+  .pj__card{padding:28px}
+  .sg{padding:24px}
+  .contact__info,.contact__form{padding:32px 24px}
+  .legal__panel{padding:28px 20px}
+  .legal__tabs{max-width:100%}
+  .cookie{left:12px;right:12px;bottom:12px;padding:18px}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav__pill">
+    <a href="#" class="nav__brand"><span class="mark"><img src="datas/medya/logo.jpg" alt="Vidya"/></span> Vidya</a>
+    <div class="nav__links">
+      <a href="#intro">Über uns</a>
+      <a href="#philosophie">Philosophie</a>
+      <a href="#leistungen">Leistungen</a>
+      <a href="#galerie">Galerie</a>
+      <a href="#kontakt">Kontakt</a>
+      <a href="#rechtliches">Rechtliches</a>
+    </div>
+    <a href="#kontakt" class="nav__cta">Beratung <span class="arr">→</span></a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero__stage">
+    <div class="hero__photo"><img src="datas/medya/cache_88701530.jpg" alt="Vidya Pflegedienst" /></div>
+    <div class="hero__grain"></div>
+
+    <div class="hero__meta">
+      <span><span class="dot"></span>24h · 0176 41687084</span>
+      <span class="sep"></span>
+      <span>Mannheim · Rhein-Neckar</span>
+    </div>
+
+    <div class="hero__badge">
+      <div class="avs">
+        <div class="av"><img src="datas/medya/cache_88701523.jpg" alt=""/></div>
+        <div class="av"><img src="datas/medya/cache_88701528.jpg" alt=""/></div>
+        <div class="av"><img src="datas/medya/cache_88701534.jpg" alt=""/></div>
+      </div>
+      <div>
+        <b>IK 460824233</b>
+        <span style="display:block;font-size:.72rem;margin-top:2px">zugelassen · § 4 Nr. 16 UStG</span>
+      </div>
+    </div>
+
+    <div class="hero__content">
+      <div>
+        <div class="hero__slogan">Willkommen bei Vidya Pflegedienst aus Mannheim</div>
+        <h1 class="hero__title">Professionelle Pflege.<br/><em>Menschliche Nähe.</em><br/>Vertrauen in Ihrem Zuhause.</h1>
+      </div>
+      <div class="hero__side">
+        <p>Wir unterstützen pflegebedürftige Menschen und ihre Angehörigen mit fachlich qualifizierter, zuverlässiger und individueller Pflege — damit ein selbstbestimmtes und würdevolles Leben in vertrauter Umgebung möglich bleibt.</p>
+        <a href="#kontakt" class="hero__cta">Kostenlose Beratung <span class="arr">→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee">
+  <div class="marquee__track">
+    <span>Grundpflege</span><span><em>Behandlungspflege</em></span><span>Unterstützung im Alltag</span><span><em>Beratung &amp; Pflegekasse</em></span><span>Für Angehörige</span><span><em>Qualität &amp; Sicherheit</em></span>
+    <span>Grundpflege</span><span><em>Behandlungspflege</em></span><span>Unterstützung im Alltag</span><span><em>Beratung &amp; Pflegekasse</em></span><span>Für Angehörige</span><span><em>Qualität &amp; Sicherheit</em></span>
+  </div>
+</div>
+
+<!-- INTRO / WHO WE ARE -->
+<section class="intro" id="intro">
+  <div class="wrap intro__grid">
+    <div>
+      <div class="eye">Über uns</div>
+      <h2>Der Mensch<br/>steht im <em>Mittelpunkt</em><br/>unseres Handelns.</h2>
+    </div>
+    <div class="intro__text">
+      <p>„Jeder Mensch ist einzigartig. Deshalb orientieren wir unsere Pflege an Ihren individuellen Bedürfnissen, Gewohnheiten und Wünschen."</p>
+      <p>Der Vidya Pflegedienst steht für eine professionelle und zugleich menschliche ambulante Pflege. Wir verbinden fachliche Kompetenz mit persönlicher Zuwendung, Respekt und Verständnis für die individuelle Lebenssituation jedes Menschen — unabhängig von Alter, Herkunft, Geschlecht, Religion oder persönlicher Lebenssituation.</p>
+      <p>Eine vertrauensvolle Zusammenarbeit mit Angehörigen, Ärzten und weiteren an der Versorgung beteiligten Personen ist für uns ein wichtiger Bestandteil guter Pflege.</p>
+
+      <div class="ganz">
+        <div class="ganz__item"><b>Körper</b><span>Pflege</span></div>
+        <div class="ganz__item"><b>Geist</b><span>Zuwendung</span></div>
+        <div class="ganz__item"><b>Seele</b><span>Würde</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOGO MEANING / PHILOSOPHIE -->
+<section class="logo-m" id="philosophie">
+  <div class="wrap">
+    <div class="logo-m__inner">
+      <div class="logo-m__visual"><img src="datas/medya/logo.jpg" alt="Vidya Pflegedienst Logo" /></div>
+      <div class="logo-m__content">
+        <div class="eye">Philosophie &amp; Name</div>
+        <h2>Vidya bedeutet<br/><em>„Wissen".</em></h2>
+        <p style="color:rgba(255,255,255,.78);font-size:.98rem;line-height:1.6">Der Name stammt aus dem Sanskrit und steht für das, was uns täglich trägt: fachliches Wissen, verbunden mit menschlicher Zuwendung. Vidya ist ein interkultureller Betrieb — wir helfen und pflegen Menschen unabhängig von Nationalität, Religion oder Weltanschauung.</p>
+        <blockquote class="logo-m__quote">
+          „Zu wissen, was man weiß, und zu wissen, was man tut, das ist Wissen."
+          <cite>— Konfuzius</cite>
+        </blockquote>
+
+        <div class="logo-m__symbols">
+          <div class="sym">
+            <div class="sym__ic">🍎</div>
+            <b>Apfel</b>
+            <span>Symbol des Lebens — die Kraft, menschliche Werte zu vitalisieren.</span>
+          </div>
+          <div class="sym">
+            <div class="sym__ic">🍀</div>
+            <b>Kleeblatt</b>
+            <span>Das Glück, Mensch zu sein und am Leben teilzuhaben.</span>
+          </div>
+          <div class="sym">
+            <div class="sym__ic" style="color:#ff5a5a">✚</div>
+            <b>Rotes Kreuz</b>
+            <span>Zugang zu professioneller medizinischer Pflege.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WIR SIND STARK -->
+<section class="stark">
+  <div class="stark__inner">
+    <div class="stark__head">
+      <div class="eye" style="justify-content:center">Unser Leitbild</div>
+      <h2>Drei Gruppen,<br/>zwölf Prinzipien,<br/><em>ein gemeinsames Versprechen.</em></h2>
+      <p>Unser Pflegeleitbild lebt in einem Akrostichon — jedes Wort steht für einen Buchstaben, jeder Buchstabe für eine Haltung.</p>
+    </div>
+
+    <div class="stark__groups">
+      <div class="sg">
+        <div class="sg__h"><b>WIR</b>sagen</div>
+        <div class="sg__letter">
+          <div class="sg__l">W</div>
+          <div>
+            <div class="sg__t">Wissen- &amp; humanorientiertes Arbeiten</div>
+            <div class="sg__p">...ist unsere höchste Priorität.</div>
+          </div>
+        </div>
+        <div class="sg__letter">
+          <div class="sg__l">I</div>
+          <div>
+            <div class="sg__t">Interkulturelles Denken und Handeln</div>
+            <div class="sg__p">...werden bei uns vorausgesetzt.</div>
+          </div>
+        </div>
+        <div class="sg__letter">
+          <div class="sg__l">R</div>
+          <div>
+            <div class="sg__t">Respekt und Toleranz</div>
+            <div class="sg__p">...sind für uns selbstverständlich.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sg">
+        <div class="sg__h"><b>SIND</b>unsere Pfleger:innen</div>
+        <div class="sg__letter">
+          <div class="sg__l">S</div>
+          <div>
+            <div class="sg__t">Saubere, freundliche &amp; einfühlsame Pflege</div>
+            <div class="sg__p">...ist unsere Aufgabe.</div>
+          </div>
+        </div>
+        <div class="sg__letter">
+          <div class="sg__l">I</div>
+          <div>
+            <div class="sg__t">Intimität und Würde</div>
+            <div class="sg__p">...aller Patient:innen werden immer gewahrt.</div>
+          </div>
+        </div>
+        <div class="sg__letter">
+          <div class="sg__l">N</div>
+          <div>
+            <div class="sg__t">Neue Patient:innen</div>
+            <div class="sg__p">...fühlen sich sofort als Teil der Familie Vidya.</div>
+          </div>
+        </div>
+        <div class="sg__letter">
+          <div class="sg__l">D</div>
+          <div>
+            <div class="sg__t">Dein Wohlbefinden</div>
+            <div class="sg__p">...ist uns wichtiger als wirtschaftliche Belange.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sg">
+        <div class="sg__h"><b>STARK</b>wissen wir</div>
+        <div class="sg__letter">
+          <div class="sg__l">S</div>
+          <div>
+            <div class="sg__t">Sorgfalt &amp; Disziplin</div>
+            <div class="sg__p">...tragen jede erfolgreiche Arbeit.</div>
+          </div>
+        </div>
+        <div class="sg__letter">
+          <div class="sg__l">T</div>
+          <div>
+            <div class="sg__t">Transparenz &amp; Zusammenarbeit mit Ärzten</div>
+            <div class="sg__p">...steigern die Zufriedenheit.</div>
+          </div>
+        </div>
+        <div class="sg__letter">
+          <div class="sg__l">A</div>
+          <div>
+            <div class="sg__t">Anforderungen aller Patient:innen</div>
+            <div class="sg__p">...müssen berücksichtigt werden.</div>
+          </div>
+        </div>
+        <div class="sg__letter">
+          <div class="sg__l">R</div>
+          <div>
+            <div class="sg__t">Rückmeldungen</div>
+            <div class="sg__p">...zeitnah erhalten — Qualität verbessern.</div>
+          </div>
+        </div>
+        <div class="sg__letter">
+          <div class="sg__l">K</div>
+          <div>
+            <div class="sg__t">Kommunikation</div>
+            <div class="sg__p">...ist der Schlüssel für ein gesundes Leben.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="stark__motto">Dann können wir gemeinsam sagen: <b>WIR SIND STARK!</b></div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="leistungen">
+  <div class="services__inner">
+    <div class="services__grain"></div>
+    <div class="services__head">
+      <div>
+        <div class="services__eye">Unser Leistungsangebot</div>
+        <h2>Sechs Säulen<br/>einer <em>guten Pflege.</em></h2>
+      </div>
+      <p class="services__lead">Jede Leistung wird nach Ihrem individuellen Pflegeplan erbracht — abgestimmt mit Ihnen, Ihren Angehörigen und Ihrer Pflegekasse.</p>
+    </div>
+
+    <div class="slist">
+      <a href="#" class="srow">
+        <span class="srow__n">01</span>
+        <span class="srow__t">Grundpflege<span>Körperpflege · Mobilität · Ernährung</span></span>
+        <span class="srow__d">Unterstützung bei Körperpflege, An- und Auskleiden, Mobilität, Ernährung, Ausscheidung sowie Lagerung und Positionierung — mit Blick für Würde und Intimität.</span>
+        <span class="srow__arr">→</span>
+      </a>
+      <a href="#" class="srow">
+        <span class="srow__n">02</span>
+        <span class="srow__t"><em>Behandlungspflege</em><span>SGB V · ärztliche Verordnung</span></span>
+        <span class="srow__d">Medikamentengabe, Wundversorgung, Verbandwechsel, Blutzuckerkontrollen und Injektionen — fachgerecht nach ärztlicher Anordnung.</span>
+        <span class="srow__arr">→</span>
+      </a>
+      <a href="#" class="srow">
+        <span class="srow__n">03</span>
+        <span class="srow__t">Unterstützung im Alltag<span>individuell geplant</span></span>
+        <span class="srow__d">Hilfe im häuslichen Umfeld, abgestimmt auf Mensch und Familie — damit das Leben in gewohnter Umgebung weitergehen kann.</span>
+        <span class="srow__arr">→</span>
+      </a>
+      <a href="#" class="srow">
+        <span class="srow__n">04</span>
+        <span class="srow__t"><em>Beratung &amp; Unterstützung</em><span>Pflegekasse · Pflegegrad</span></span>
+        <span class="srow__d">Individuelle Beratung zu Pflegeversicherung, Pflegegrad und bestehenden Ansprüchen — wir begleiten die gesamte Antragstellung.</span>
+        <span class="srow__arr">→</span>
+      </a>
+      <a href="#" class="srow">
+        <span class="srow__n">05</span>
+        <span class="srow__t">Für Angehörige<span>Entlastung &amp; Begleitung</span></span>
+        <span class="srow__d">Offene Kommunikation, Pflegeplanung und Organisation — gemeinsam schaffen wir Entlastung für Familien.</span>
+        <span class="srow__arr">→</span>
+      </a>
+      <a href="#" class="srow">
+        <span class="srow__n">06</span>
+        <span class="srow__t"><em>Qualität &amp; Sicherheit</em><span>8 Qualitätsprinzipien</span></span>
+        <span class="srow__d">Qualifizierte Fachpflege, individuelle Pflegeplanung, sorgfältige Dokumentation, Datenschutz und kontinuierliche Verbesserung.</span>
+        <span class="srow__arr">→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery" id="galerie">
+  <div class="gallery__head">
+    <div>
+      <div class="eye">Bilder &amp; Momente</div>
+      <h2>Gesundheitstag<br/><em>Schönau 2014.</em></h2>
+    </div>
+    <p class="gallery__sub">Vidya beim Mannheimer Gesundheitstag — Information, Blutdruck- und Blutzuckermessungen, Begegnungen mit Nachbar:innen.</p>
+  </div>
+  <div class="gallery__grid">
+    <a class="gcard gcard--w3 gcard--h2"><img src="datas/medya/cache_88701523.jpg" alt="" /><div class="gcaption">Vor Ort in Schönau</div></a>
+    <a class="gcard gcard--w2"><img src="datas/medya/cache_88701524.jpg" alt="" /><div class="gcaption">Beratung</div></a>
+    <a class="gcard"><img src="datas/medya/cache_88701525.jpg" alt="" /><div class="gcaption">Team</div></a>
+    <a class="gcard"><img src="datas/medya/cache_88701526.jpg" alt="" /><div class="gcaption">Infostand</div></a>
+    <a class="gcard"><img src="datas/medya/cache_88701527.jpg" alt="" /><div class="gcaption">Messungen</div></a>
+    <a class="gcard"><img src="datas/medya/cache_88701528.jpg" alt="" /><div class="gcaption">Begegnung</div></a>
+    <a class="gcard gcard--w2"><img src="datas/medya/cache_88701529.jpg" alt="" /><div class="gcaption">Mitten im Stadtteil</div></a>
+    <a class="gcard"><img src="datas/medya/cache_88701531.jpg" alt="" /><div class="gcaption">Fragen &amp; Antworten</div></a>
+    <a class="gcard"><img src="datas/medya/cache_88701532.jpg" alt="" /><div class="gcaption">Austausch</div></a>
+    <a class="gcard"><img src="datas/medya/cache_88701533.jpg" alt="" /><div class="gcaption">Nachbarschaft</div></a>
+    <a class="gcard gcard--w2"><img src="datas/medya/cache_88701534.jpg" alt="" /><div class="gcaption">Vidya in Schönau</div></a>
+    <a class="gcard"><img src="datas/medya/cache_88701535.jpg" alt="" /><div class="gcaption">Dankbare Blicke</div></a>
+  </div>
+</section>
+
+<!-- QUOTE -->
+<section class="quote">
+  <div class="quote__eye">Unser Pflegeverständnis</div>
+  <p class="quote__text">„Wir nehmen den Menschen als ein <span class="hl">Ganzes</span> wahr. Körper, Geist und Seele müssen gepflegt werden, <em>um trotz aller Umstände ein Leben in Würde zu ermöglichen."</em></p>
+  <div class="quote__author">
+    Vidya Pflegedienst<br/>
+    <b>Ilknur Bilen, Inhaberin</b>
+  </div>
+</section>
+
+<!-- PRESS & JOBS -->
+<section class="pj">
+  <div class="pj__inner">
+    <div class="pj__card">
+      <div class="eye">Presse</div>
+      <h2>Was andere <em>über uns</em> schreiben.</h2>
+      <p>Vidya Pflegedienst wurde mehrfach in regionalen Medien und Fachpublikationen vorgestellt.</p>
+      <div class="press-list">
+        <div class="press-item">
+          <div class="press-item__d">11<span>Jan 2016</span></div>
+          <div class="press-item__t">
+            <b>Mannheimer Morgen</b>
+            <span>Portrait &amp; Reportage über Vidya Pflegedienst</span>
+          </div>
+        </div>
+        <div class="press-item">
+          <div class="press-item__d">04<span>IHK 2014</span></div>
+          <div class="press-item__t">
+            <b>IHK Magazin · „Themen und Tendenzen"</b>
+            <span>Mannheimer IHK · Ausgabe 4/2014</span>
+          </div>
+        </div>
+      </div>
+      <a href="https://www.vidyapflegedienst.de/presse/" class="pj__cta">Zur Presseseite <span class="arr">→</span></a>
+    </div>
+
+    <div class="pj__card">
+      <div class="eye">Karriere</div>
+      <h2>Werden Sie Teil<br/>unseres <em>Teams.</em></h2>
+      <p>Wir suchen ab sofort Pflegefachkräfte für Mannheim und das gesamte Rhein-Neckar-Gebiet (m/w/d):</p>
+      <div class="jobs-list">
+        <span class="jchip">Pflegefachfrau / Pflegefachmann</span>
+        <span class="jchip">Gesundheits- &amp; Krankenpflege</span>
+        <span class="jchip">Altenpflege</span>
+        <span class="jchip">Kinderkrankenpflege</span>
+        <span class="jchip">MFA — Medizinische Fachangestellte</span>
+      </div>
+      <p style="font-size:.85rem">Faire Vergütung · Fort- und Weiterbildung · Interkulturelles Team · Führerschein Klasse B von Vorteil.</p>
+      <a href="mailto:info@vidyapflegedienst.de?subject=Bewerbung" class="pj__cta">Jetzt bewerben <span class="arr">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="kontakt">
+  <div class="contact__inner">
+    <div class="contact__info">
+      <div class="eye">Kontakt &amp; Anfahrt</div>
+      <h2>Sprechen Sie mit uns.<br/><em>Persönlich.</em></h2>
+      <p>Wir beraten Sie gerne — kostenlos und unverbindlich. Unsere Zentrale befindet sich in Mannheim-Schönau.</p>
+
+      <div class="contact__kv">
+        <div class="kv">
+          <div class="kv__ic">📍</div>
+          <div class="kv__t">
+            <small>Zentrale</small>
+            <b>Sonderburger Straße 91</b>
+            <span>68307 Mannheim · Deutschland</span>
+          </div>
+        </div>
+        <div class="kv">
+          <div class="kv__ic">☎</div>
+          <div class="kv__t">
+            <small>Telefon</small>
+            <a href="tel:062140177755">0621 / 401 777 55</a>
+            <span>Fax 0621 / 401 777 56</span>
+          </div>
+        </div>
+        <div class="kv">
+          <div class="kv__ic">📱</div>
+          <div class="kv__t">
+            <small>24h Erreichbarkeit</small>
+            <a href="tel:017641687084">0176 / 41 68 70 84</a>
+            <span>Tag und Nacht · 7 Tage die Woche</span>
+          </div>
+        </div>
+        <div class="kv">
+          <div class="kv__ic">✉</div>
+          <div class="kv__t">
+            <small>E-Mail</small>
+            <a href="mailto:info@vidyapflegedienst.de">info@vidyapflegedienst.de</a>
+            <span>IK 460824233</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact__form">
+      <h3>Kontakt-<em>formular</em></h3>
+      <p class="lead">Pflichtfelder sind mit <span style="color:var(--red)">*</span> markiert. Ihre Angaben werden ausschließlich zur Bearbeitung Ihrer Anfrage verwendet.</p>
+
+      <form class="cf" id="kontaktForm" novalidate>
+        <div class="cfield">
+          <label for="k_name">Name <span class="req">*</span></label>
+          <input type="text" id="k_name" name="name" required autocomplete="name" placeholder="Ihr vollständiger Name" />
+        </div>
+        <div class="cfield">
+          <label for="k_mail">E-Mail-Adresse <span class="req">*</span></label>
+          <input type="email" id="k_mail" name="email" required autocomplete="email" placeholder="name@beispiel.de" />
+        </div>
+        <div class="cfield">
+          <label for="k_msg">Nachricht <span class="req">*</span></label>
+          <textarea id="k_msg" name="message" required placeholder="Wie können wir Ihnen helfen?"></textarea>
+        </div>
+
+        <div class="cf__warn">
+          <strong>Datenschutzhinweis:</strong> Bitte senden Sie keine sensiblen Gesundheitsdaten (Gesundheitsdaten nach Art. 9 DSGVO) per unverschlüsselter E-Mail oder über dieses Formular.
+        </div>
+
+        <div class="cfield cf__captcha">
+          <div>
+            <label>Spam-Schutz <span class="req">*</span></label>
+            <div class="captcha__box" id="captchaBox">V7-K42</div>
+          </div>
+          <div class="cfield" style="margin:0">
+            <label for="k_cap">Code eingeben</label>
+            <input type="text" id="k_cap" name="captcha" required placeholder="z.B. V7-K42" autocomplete="off" />
+          </div>
+        </div>
+
+        <div class="cf__consent">
+          <input type="checkbox" id="k_consent" required />
+          <label for="k_consent">Ich habe die <a href="#datenschutz" onclick="document.querySelector('.legal__tab[data-tab=d]').click()">Datenschutzerklärung</a> zur Kenntnis genommen und willige in die Verarbeitung meiner Angaben zur Bearbeitung meiner Anfrage ein (Art. 6 Abs. 1 lit. a &amp; b DSGVO). <span style="color:var(--muted)">Die Einwilligung kann jederzeit per E-Mail an info@vidyapflegedienst.de widerrufen werden.</span></label>
+        </div>
+
+        <button type="submit" class="cf__submit">Nachricht senden <span class="arr">→</span></button>
+        <div class="cf__status" id="formStatus"></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- LEGAL: Impressum & Datenschutz -->
+<section class="legal" id="rechtliches">
+  <div class="legal__inner">
+    <div class="legal__head">
+      <div class="eye" style="justify-content:center">Rechtliches</div>
+      <h2>Impressum &amp; <em>Datenschutz</em></h2>
+      <p>Transparenz ist Teil unserer Pflege. Hier finden Sie alle gesetzlich geforderten Angaben nach § 5 DDG und § 18 Abs. 2 MStV sowie unsere vollständige Datenschutzerklärung gemäß DSGVO und BDSG.</p>
+    </div>
+
+    <div class="legal__tabs" role="tablist">
+      <button class="legal__tab is-active" data-tab="i" role="tab">Impressum</button>
+      <button class="legal__tab" data-tab="d" role="tab">Datenschutz</button>
+    </div>
+
+    <div class="legal__panel is-active" data-panel="i" id="impressum">
+      <h3>Angaben gemäß § 5 DDG</h3>
+      <dl class="legal__meta">
+        <dt>Firma</dt><dd>Vidya Pflegedienst</dd>
+        <dt>Inhaberin</dt><dd>Ilknur Bilen</dd>
+        <dt>Anschrift</dt><dd>Sonderburger Straße 91, 68307 Mannheim, Deutschland</dd>
+        <dt>Telefon</dt><dd>0621 / 401 777 55</dd>
+        <dt>Fax</dt><dd>0621 / 401 777 56</dd>
+        <dt>Mobil</dt><dd>0176 / 41 68 70 84</dd>
+        <dt>E-Mail</dt><dd><a href="mailto:info@vidyapflegedienst.de">info@vidyapflegedienst.de</a></dd>
+        <dt>Institutionskennzeichen (IK)</dt><dd>460824233</dd>
+        <dt>Tätigkeit</dt><dd>Ambulanter Pflegedienst</dd>
+        <dt>Umsatzsteuer</dt><dd>Wir sind nach § 4 Nr. 16 UStG von der Umsatzsteuer befreit.</dd>
+        <dt>Handelsregister</dt><dd>Wir sind nicht in einem Handelsregister eingetragen.</dd>
+      </dl>
+
+      <h3>Verantwortlich für den Inhalt (§ 18 Abs. 2 MStV)</h3>
+      <p>Ilknur Bilen, Sonderburger Straße 91, 68307 Mannheim, Deutschland</p>
+
+      <h3>Haftung für Inhalte</h3>
+      <p>Die Inhalte dieser Website wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen. Als Diensteanbieter sind wir gemäß § 7 Abs. 1 DDG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 DDG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen.</p>
+
+      <h3>Haftung für externe Links</h3>
+      <p>Unsere Website enthält ggf. Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Für die Inhalte verlinkter Seiten ist stets der jeweilige Anbieter verantwortlich. Zum Zeitpunkt der Verlinkung wurden die verlinkten Seiten auf mögliche Rechtsverstöße überprüft; rechtswidrige Inhalte waren nicht erkennbar. Bei Bekanntwerden von Rechtsverletzungen werden derartige Links umgehend entfernt.</p>
+
+      <h3>Urheberrecht</h3>
+      <p>Die durch die Seitenbetreiber erstellten Inhalte und Werke auf dieser Website (Texte, Bilder, Grafiken, Logos) unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers.</p>
+    </div>
+
+    <div class="legal__panel" data-panel="d" id="datenschutz">
+      <h3>§ 1 Verantwortlicher</h3>
+      <p>Verantwortlich im Sinne der DSGVO ist:<br/><strong>Vidya Pflegedienst</strong>, Inhaberin: Ilknur Bilen, Sonderburger Straße 91, 68307 Mannheim · Telefon: 0621 / 401 777 55 · E-Mail: <a href="mailto:info@vidyapflegedienst.de">info@vidyapflegedienst.de</a></p>
+
+      <h3>§ 2 Datenschutzbeauftragte</h3>
+      <p><strong>Sarah Kotzbauer</strong><br/>E-Mail: <a href="mailto:sarah.kotzbauer@vidyapflegedienst.de">sarah.kotzbauer@vidyapflegedienst.de</a></p>
+
+      <h3>§ 3 Allgemeine Informationen</h3>
+      <p>Personenbezogene Daten werden ausschließlich auf Grundlage einer gesetzlichen Erlaubnis (Art. 6 DSGVO), zur Vertragserfüllung, aufgrund gesetzlicher Verpflichtungen oder bei Vorliegen einer ausdrücklichen Einwilligung verarbeitet.</p>
+
+      <h3>§ 4 Besuch unserer Website</h3>
+      <p>Bei jedem Zugriff auf unsere Website werden technisch notwendige Serverlogdaten (IP-Adresse, Zeitpunkt des Zugriffs, aufgerufene Seiten, Browsertyp, Betriebssystem, Datenmenge, Referrer-URL) erhoben. Diese Daten dienen ausschließlich der technischen Bereitstellung und Sicherheit der Website.</p>
+      <div class="box">Es werden <strong>keine</strong> externen Analyse- oder Tracking-Dienste wie Google Analytics eingesetzt.</div>
+
+      <h3>§ 5 Kontaktaufnahme</h3>
+      <p>Bei Kontaktaufnahme per Telefon, E-Mail oder Kontaktformular werden die mitgeteilten Daten ausschließlich zur Bearbeitung Ihrer Anfrage verwendet (Art. 6 Abs. 1 lit. a &amp; b DSGVO).</p>
+      <div class="box warn"><strong>Wichtiger Sicherheitshinweis:</strong> Unverschlüsselte E-Mails sind nicht geeignet zur Übermittlung sensibler Daten, insbesondere Gesundheitsdaten. Bitte senden Sie solche Daten nicht per E-Mail.</div>
+
+      <h3>§ 6 Verarbeitung von Gesundheitsdaten</h3>
+      <p>Als ambulanter Pflegedienst verarbeiten wir zur Erbringung unserer Leistungen besonders schützenswerte Kategorien personenbezogener Daten, insbesondere Gesundheitsdaten (Art. 9 DSGVO). Die Verarbeitung erfolgt unter strengster Vertraulichkeit und auf Grundlage gesetzlicher Regelungen (SGB V, SGB XI).</p>
+
+      <h3>§ 7 Zwecke der Datenverarbeitung</h3>
+      <ul>
+        <li>Planung, Organisation und Durchführung von Pflegeleistungen</li>
+        <li>Pflegedokumentation und Archivierung</li>
+        <li>Abrechnung mit Pflege- und Krankenkassen</li>
+        <li>Koordination mit Ärzten und medizinischen Dienstleistern</li>
+        <li>Erfüllung gesetzlicher Aufbewahrungs- und Nachweispflichten</li>
+        <li>Durchführung von Bewerbungsverfahren</li>
+      </ul>
+
+      <h3>§ 8 Empfänger personenbezogener Daten</h3>
+      <ul>
+        <li>Pflege- und Krankenkassen</li>
+        <li>Sozialleistungsträger</li>
+        <li>Medizinischer Dienst</li>
+        <li>Behandelnde Ärzte und medizinisches Personal</li>
+        <li>Abrechnungsstellen</li>
+        <li>Behörden und gesetzlich befugte Stellen</li>
+      </ul>
+
+      <h3>§ 9 Rechtsgrundlagen</h3>
+      <p>Allgemeine personenbezogene Daten: Art. 6 Abs. 1 DSGVO · Besondere Kategorien (Gesundheitsdaten): Art. 9 DSGVO · Sozial- und Gesundheitsrecht (SGB V &amp; SGB XI), vertragliche Pflichten sowie ggf. ausdrückliche Einwilligung.</p>
+
+      <h3>§ 10 Speicherdauer</h3>
+      <p>Daten werden nur so lange gespeichert, wie es der jeweilige Verarbeitungszweck erfordert, bzw. gesetzliche Aufbewahrungsfristen (in der Regel 10 Jahre) bestehen.</p>
+
+      <h3>§ 11 Ihre Rechte</h3>
+      <ul>
+        <li>Auskunft (Art. 15 DSGVO)</li>
+        <li>Berichtigung (Art. 16 DSGVO)</li>
+        <li>Löschung (Art. 17 DSGVO)</li>
+        <li>Einschränkung der Verarbeitung (Art. 18 DSGVO)</li>
+        <li>Datenübertragbarkeit (Art. 20 DSGVO)</li>
+        <li>Widerspruch (Art. 21 DSGVO)</li>
+        <li>Widerruf einer erteilten Einwilligung</li>
+      </ul>
+
+      <h3>§ 12 Beschwerderecht bei der Aufsichtsbehörde</h3>
+      <dl class="legal__meta">
+        <dt>Zuständige Behörde</dt><dd>Der Landesbeauftragte für den Datenschutz und die Informationsfreiheit Baden-Württemberg</dd>
+        <dt>Anschrift</dt><dd>Lautenschlagerstraße 20, 70173 Stuttgart</dd>
+        <dt>Telefon</dt><dd>0711 / 615541-0</dd>
+        <dt>E-Mail</dt><dd><a href="mailto:poststelle@lfdi.bwl.de">poststelle@lfdi.bwl.de</a></dd>
+      </dl>
+
+      <h3>§ 13 Cookies</h3>
+      <p>Auf dieser Website werden <strong>keine</strong> Marketing-, Werbe- oder Tracking-Cookies eingesetzt. Es werden ausschließlich technisch notwendige Session-Elemente verwendet (§ 25 Abs. 2 Nr. 2 TTDSG) — eine Einwilligung ist hierfür nicht erforderlich.</p>
+
+      <h3>§ 14 Externe Dienste</h3>
+      <p>Es sind <strong>keine</strong> externen Tracking-Dienste wie Google Analytics, Google Maps, YouTube, Facebook- oder Instagram-Plugins auf dieser Website eingebunden.</p>
+
+      <h3>§ 15 SSL-/TLS-Verschlüsselung</h3>
+      <p>Diese Website wird über HTTPS mittels SSL/TLS-Verschlüsselung übertragen, um die Sicherheit der übermittelten Daten zu gewährleisten.</p>
+
+      <h3>§ 16 Datensicherheit</h3>
+      <p>Es werden angemessene technische und organisatorische Maßnahmen (TOMs) ergriffen, um Daten gegen Verlust, unbefugten Zugriff und Manipulation zu schützen.</p>
+
+      <h3>§ 17 Bewerbungen</h3>
+      <p>Im Rahmen des Bewerbungsverfahrens werden Bewerberdaten ausschließlich zur Durchführung des Bewerbungsverfahrens gespeichert.</p>
+
+      <h3>§ 18 Aktualisierung</h3>
+      <p>Diese Datenschutzerklärung wird aufgrund rechtlicher und organisatorischer Änderungen regelmäßig überarbeitet. <strong>Stand: September 2026</strong></p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="faq__inner">
+    <div>
+      <div class="eye">Häufige Fragen</div>
+      <h2>Antworten,<br/><em>bevor Sie fragen.</em></h2>
+      <p class="faq__sub">Alles, was Sie über den Start mit uns wissen möchten — kompakt, ehrlich und direkt aus unserer täglichen Arbeit.</p>
+      <div class="faq__contact">
+        <span>Ihre Frage ist nicht dabei?</span>
+        <b>0621 / 401 777 55</b>
+        <small class="faq__em">Hinweis: Bitte senden Sie keine Gesundheitsdaten per unverschlüsselter E-Mail.</small>
+      </div>
+    </div>
+    <div class="qlist">
+      <details class="q" open>
+        <summary>Wer bezahlt die Pflegeleistungen?</summary>
+        <div class="q__body">Die meisten Leistungen werden direkt mit Ihrer Pflegekasse oder Krankenkasse abgerechnet — abhängig von Pflegegrad und ärztlicher Verordnung (SGB V &amp; SGB XI). Als nach § 4 Nr. 16 UStG von der Umsatzsteuer befreiter Pflegedienst (IK 460824233) sind wir Vertragspartner aller gesetzlichen Kassen. Wir helfen bei der gesamten Antragstellung — kostenlos.</div>
+      </details>
+      <details class="q">
+        <summary>In welchem Gebiet sind Sie tätig?</summary>
+        <div class="q__body">Wir pflegen im gesamten Rhein-Neckar-Gebiet. Unsere Zentrale befindet sich in der Sonderburger Straße 91 in Mannheim-Schönau — wir kommen gerne zu Ihnen nach Hause.</div>
+      </details>
+      <details class="q">
+        <summary>Wie schnell können Sie mit der Pflege beginnen?</summary>
+        <div class="q__body">In dringenden Fällen innerhalb kurzer Zeit. Rufen Sie uns an unter 0621 / 401 777 55 — in Notfällen sind wir 24 Stunden am Tag unter 0176 / 41 68 70 84 erreichbar.</div>
+      </details>
+      <details class="q">
+        <summary>Was ist, wenn ich noch keinen Pflegegrad habe?</summary>
+        <div class="q__body">Kein Problem — wir begleiten Sie durch den gesamten Prozess: von der Antragstellung bei der Pflegekasse über den MDK-Termin bis zur Einstufung. Diese Beratung ist für Sie kostenfrei.</div>
+      </details>
+      <details class="q">
+        <summary>Welche Sprachen sprechen Ihre Mitarbeitenden?</summary>
+        <div class="q__body">Vidya ist ein interkultureller Betrieb. Wir legen Wert auf interkulturelles Denken und Handeln — nennen Sie uns Ihre bevorzugte Sprache, wir stimmen die Betreuung entsprechend ab.</div>
+      </details>
+      <details class="q">
+        <summary>Wie läuft die Erstberatung ab?</summary>
+        <div class="q__body">Wir kommen zu Ihnen nach Hause, lernen Sie und Ihre Angehörigen persönlich kennen und erstellen gemeinsam einen individuellen Pflegeplan. Transparenz und offene Kommunikation sind für uns selbstverständlich.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer" id="footer">
+  <div class="footer__inner">
+    <div class="footer__top">
+      <div class="footer__cta">
+        Lassen Sie uns über<br/><em>Ihre Situation</em> sprechen.<br/>
+        <a href="tel:062140177755">0621 / 401 777 55</a>
+      </div>
+      <a href="mailto:info@vidyapflegedienst.de" class="footer__bigcta">Beratung anfragen <span class="arr">→</span></a>
+    </div>
+
+    <div class="footer__grid">
+      <div>
+        <div class="footer__brand">
+          <span class="mark"><img src="datas/medya/logo.jpg" alt=""/></span>
+          Vidya Pflegedienst
+        </div>
+        <p class="footer__about">Ambulanter Pflegedienst in Mannheim und im gesamten Rhein-Neckar-Gebiet. Professionelle Pflege, menschliche Nähe, Vertrauen in Ihrem Zuhause.</p>
+        <div class="footer__owner">
+          Inhaberin
+          <b>Ilknur Bilen</b>
+          IK 460824233 · nach § 4 Nr. 16 UStG von der USt. befreit
+        </div>
+      </div>
+      <div>
+        <h5>Sitemap</h5>
+        <ul>
+          <li><a href="#intro">Über uns</a></li>
+          <li><a href="#philosophie">Philosophie</a></li>
+          <li><a href="#leistungen">Leistungen</a></li>
+          <li><a href="#galerie">Bilder</a></li>
+          <li><a href="#">Aktuelles</a></li>
+          <li><a href="#">Stellenangebot</a></li>
+          <li><a href="#">Presse</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Kontakt</h5>
+        <ul>
+          <li><small>Adresse</small>Sonderburger Straße 91<br/>68307 Mannheim</li>
+          <li><small>Telefon</small><a href="tel:062140177755">0621 / 401 777 55</a></li>
+          <li><small>Fax</small>0621 / 401 777 56</li>
+          <li><small>E-Mail</small><a href="mailto:info@vidyapflegedienst.de">info@vidyapflegedienst.de</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>24h Erreichbarkeit</h5>
+        <ul>
+          <li style="font-family:'Instrument Serif',serif;font-size:1.5rem;color:var(--lime)"><a href="tel:017641687084" style="color:var(--lime)">0176 / 41 68 70 84</a></li>
+          <li style="color:rgba(255,255,255,.6);font-size:.82rem">Tag und Nacht erreichbar — auch am Wochenende und an Feiertagen.</li>
+          <li style="margin-top:10px"><small>Datenschutzbeauftragte</small>Sarah Kotzbauer<br/><a href="mailto:sarah.kotzbauer@vidyapflegedienst.de" style="font-size:.78rem">sarah.kotzbauer@vidyapflegedienst.de</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer__bot">
+      <span>© 2026 Vidya Pflegedienst · vidyapflegedienst.de</span>
+      <div style="display:flex;gap:20px">
+        <a href="#impressum" onclick="setTimeout(()=>document.querySelector('.legal__tab[data-tab=i]').click(),50)">Impressum</a>
+        <a href="#datenschutz" onclick="setTimeout(()=>document.querySelector('.legal__tab[data-tab=d]').click(),50)">Datenschutzerklärung</a>
+        <a href="#" onclick="event.preventDefault();document.getElementById('cookieBanner').classList.add('is-shown');return false;">Cookie-Einstellungen</a>
+      </div>
+      <span class="footer__legal">Nicht im Handelsregister eingetragen.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- COOKIE BANNER (TTDSG § 25 konform) -->
+<div class="cookie" id="cookieBanner" role="dialog" aria-labelledby="cookieTitle" aria-describedby="cookieDesc">
+  <div class="cookie__ic">🍪</div>
+  <div class="cookie__t">
+    <b id="cookieTitle">Diese Website nutzt nur technisch notwendige Cookies.</b>
+    <p id="cookieDesc">Wir setzen <strong>keine</strong> Marketing-, Tracking- oder Analyse-Cookies ein (keine Google Analytics, keine Social-Media-Plugins). Zum Betrieb der Website verwenden wir ausschließlich technisch notwendige Sitzungs-Elemente nach § 25 Abs. 2 Nr. 2 TTDSG — hierfür ist keine Einwilligung erforderlich. Mehr dazu in unserer <a href="#datenschutz" onclick="document.querySelector('.legal__tab[data-tab=d]').click();document.getElementById('cookieBanner').classList.remove('is-shown');">Datenschutzerklärung</a>.</p>
+  </div>
+  <div class="cookie__act">
+    <button class="cookie__btn cookie__btn--ghost" id="cookieInfo" onclick="document.querySelector('.legal__tab[data-tab=d]').click();document.getElementById('datenschutz').scrollIntoView({behavior:'smooth'});document.getElementById('cookieBanner').classList.remove('is-shown');localStorage.setItem('vidya_cookie_ack','1');">Mehr erfahren</button>
+    <button class="cookie__btn cookie__btn--primary" id="cookieOk">Verstanden</button>
+  </div>
+</div>
+
+<script>
+  // ---- FAQ single-open accordion ----
+  document.querySelectorAll('.qlist .q').forEach(d=>{
+    d.addEventListener('toggle',()=>{
+      if(d.open) document.querySelectorAll('.qlist .q').forEach(o=>{if(o!==d)o.open=false});
+    });
+  });
+
+  // ---- Legal tabs (Impressum / Datenschutz) ----
+  document.querySelectorAll('.legal__tab').forEach(tab=>{
+    tab.addEventListener('click',()=>{
+      const key=tab.dataset.tab;
+      document.querySelectorAll('.legal__tab').forEach(t=>t.classList.toggle('is-active',t===tab));
+      document.querySelectorAll('.legal__panel').forEach(p=>p.classList.toggle('is-active',p.dataset.panel===key));
+    });
+  });
+
+  // ---- Captcha (rotate on load) ----
+  (function(){
+    const chars='ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+    let code='';
+    for(let i=0;i<2;i++)code+=chars[Math.floor(Math.random()*chars.length)];
+    code+='-';
+    for(let i=0;i<3;i++)code+=chars[Math.floor(Math.random()*chars.length)];
+    const box=document.getElementById('captchaBox');
+    if(box){box.textContent=code;box.dataset.code=code;}
+  })();
+
+  // ---- Contact form (DSGVO konform) ----
+  const form=document.getElementById('kontaktForm');
+  const status=document.getElementById('formStatus');
+  if(form){
+    form.addEventListener('submit',e=>{
+      e.preventDefault();
+      status.className='cf__status';
+      status.textContent='';
+      const name=form.name.value.trim();
+      const email=form.email.value.trim();
+      const message=form.message.value.trim();
+      const captcha=form.captcha.value.trim().toUpperCase();
+      const consent=form.querySelector('#k_consent').checked;
+      const expected=document.getElementById('captchaBox').dataset.code;
+
+      if(!name||!email||!message){
+        status.className='cf__status err';
+        status.textContent='Beim Versenden des Formulars ist ein Fehler aufgetreten. Bitte füllen Sie alle Pflichtfelder aus.';
+        return;
+      }
+      if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){
+        status.className='cf__status err';
+        status.textContent='Bitte geben Sie eine gültige E-Mail-Adresse an.';
+        return;
+      }
+      if(captcha!==expected){
+        status.className='cf__status err';
+        status.textContent='Der Spam-Schutz-Code stimmt nicht. Bitte erneut versuchen.';
+        return;
+      }
+      if(!consent){
+        status.className='cf__status err';
+        status.textContent='Bitte stimmen Sie der Datenschutzerklärung zu.';
+        return;
+      }
+      status.className='cf__status ok';
+      status.textContent='✓ Ihre Formularnachricht wurde erfolgreich versendet.';
+      form.reset();
+    });
+  }
+
+  // ---- Cookie Banner (TTDSG § 25 Abs. 2 Nr. 2) ----
+  (function(){
+    const banner=document.getElementById('cookieBanner');
+    const okBtn=document.getElementById('cookieOk');
+    if(!banner) return;
+    const ack=(()=>{try{return localStorage.getItem('vidya_cookie_ack')==='1'}catch(e){return false}})();
+    if(!ack){setTimeout(()=>banner.classList.add('is-shown'),800);}
+    okBtn&&okBtn.addEventListener('click',()=>{
+      banner.classList.remove('is-shown');
+      try{localStorage.setItem('vidya_cookie_ack','1')}catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>
