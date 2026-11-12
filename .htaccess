@@ -1,0 +1,50 @@
+# ============================================
+# Vidya Pflegedienst · IONOS Webhosting
+# ============================================
+
+# -- HTTPS erzwingen (SSL ist bei IONOS inklusive) --
+RewriteEngine On
+RewriteCond %{HTTPS} !=on
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# -- www auf non-www (optional: umkehren falls gewünscht) --
+RewriteCond %{HTTP_HOST} ^www\.vidyapflegedienst\.de$ [NC]
+RewriteRule ^(.*)$ https://vidyapflegedienst.de/$1 [L,R=301]
+
+# -- Standard-Dokument --
+DirectoryIndex index.html
+
+# -- Sicherheits-Header (DSGVO / BSI empfohlen) --
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Permissions-Policy "geolocation=(), camera=(), microphone=(), payment=()"
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+</IfModule>
+
+# -- Komprimierung --
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css application/javascript image/svg+xml application/json
+</IfModule>
+
+# -- Browser-Cache für Assets --
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/jpeg "access plus 1 month"
+  ExpiresByType image/png "access plus 1 month"
+  ExpiresByType image/webp "access plus 1 month"
+  ExpiresByType image/svg+xml "access plus 1 month"
+  ExpiresByType text/css "access plus 1 week"
+  ExpiresByType application/javascript "access plus 1 week"
+  ExpiresByType image/x-icon "access plus 1 year"
+  ExpiresDefault "access plus 1 day"
+</IfModule>
+
+# -- Fehlerseiten --
+ErrorDocument 404 /index.html
+
+# -- Versteckte Dateien schützen --
+<FilesMatch "^\.(htaccess|git|env)">
+  Require all denied
+</FilesMatch>
