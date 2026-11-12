@@ -508,16 +508,22 @@ body.menu-open{overflow:hidden}
 
   /* HERO CAROUSEL - mobile */
   .hero{padding:76px 10px 10px}
-  .hero__stage{padding:0;min-height:72vh;max-height:none;border-radius:20px}
+  .hero__stage{padding:0;min-height:88vh;max-height:none;border-radius:20px}
   .carousel{border-radius:20px}
-  .slide{padding:24px 20px 80px}
-  .slide__inner{gap:24px}
+  .slide{padding:22px 18px 72px;overflow-y:auto}
+  .slide__inner{gap:18px}
+  .slide__info-card{padding:14px 16px;gap:10px}
+  .slide__info-card h4{font-size:1rem;margin-bottom:2px}
+  .slide__info-card ul{gap:4px}
+  .slide__info-card li{font-size:.78rem}
+  .slide__info-card .notfall{font-size:1rem}
   .slide__top{flex-direction:column;align-items:flex-start;gap:16px}
   .slide__motto{max-width:none}
   .slide__motto b{font-size:1.25rem}
   .slide__motto span{font-size:.62rem}
   .slide__meta{font-size:.6rem;letter-spacing:.18em;flex-wrap:wrap;gap:8px}
-  .slide__body{grid-template-columns:1fr;gap:20px;align-items:flex-start}
+  .slide__body,
+  .slide--info .slide__body{grid-template-columns:1fr!important;gap:14px;align-items:flex-start}
   .slide__title{font-size:clamp(1.9rem,8vw,2.6rem);line-height:1.05}
   .slide__side{max-width:none;gap:16px}
   .slide__side p{font-size:.9rem}
@@ -529,12 +535,6 @@ body.menu-open{overflow:hidden}
   .slide--logo__bigmark{width:130px;height:130px;padding:16px;border-radius:22px}
   .slide--logo__name{font-size:clamp(2.4rem,10vw,3.4rem)}
   .slide--logo__tag{font-size:.68rem;letter-spacing:.22em}
-
-  /* Info card slides mobile */
-  .slide__info-card{padding:18px 20px}
-  .slide__info-card h4{font-size:1.1rem}
-  .slide__info-card li{font-size:.82rem}
-  .slide__info-card .notfall{font-size:1.1rem}
 
   /* Carousel controls mobile */
   .carousel__dots{left:20px;bottom:18px;gap:5px}
