@@ -1,0 +1,20 @@
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+
+/
+  Cache-Control: no-cache, no-store, must-revalidate
+  Clear-Site-Data: "cache", "storage"
+
+/index.html
+  Cache-Control: no-cache, no-store, must-revalidate
+  Clear-Site-Data: "cache", "storage"
+
+/bild-test.html
+  Cache-Control: no-cache, no-store, must-revalidate
+
+/assets/*
+  Cache-Control: public, max-age=3600
+
+/datas/*
+  Cache-Control: public, max-age=3600
