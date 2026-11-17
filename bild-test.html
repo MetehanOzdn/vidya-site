@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bild-Diagnose · Vidya Pflegedienst</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:#f2efe8;color:#0a1810;padding:14px;line-height:1.5}
+  h1{font-size:1.2rem;margin-bottom:6px;color:#0d1f16}
+  p{font-size:.85rem;color:#6d766f;margin-bottom:14px}
+  .info{background:#fff;padding:10px 12px;border-radius:10px;font-size:.75rem;margin-bottom:12px;word-break:break-all}
+  .info b{color:#0d1f16}
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+  .item{background:#fff;border-radius:10px;overflow:hidden;position:relative;aspect-ratio:1}
+  .item img{width:100%;height:100%;object-fit:cover;display:block}
+  .item .status{position:absolute;top:4px;left:4px;right:4px;padding:3px 6px;border-radius:5px;font-size:.65rem;font-weight:700;text-align:center;z-index:2}
+  .status.ok{background:#2d7a3d;color:#fff}
+  .status.fail{background:#c53030;color:#fff;animation:pulse 1s infinite}
+  .status.pending{background:#999;color:#fff}
+  .label{position:absolute;bottom:0;left:0;right:0;padding:4px 6px;background:rgba(0,0,0,.6);color:#fff;font-size:.65rem;font-family:monospace;z-index:2}
+  @keyframes pulse{50%{opacity:.5}}
+  .summary{margin-top:14px;padding:12px;background:#fff;border-radius:10px;font-size:.85rem;text-align:center;font-weight:700}
+  .summary.allok{background:#2d7a3d;color:#fff}
+  .summary.anyfail{background:#c53030;color:#fff}
+  button{margin-top:8px;padding:10px 16px;background:#c8f36b;color:#0a1810;border:0;border-radius:8px;font-weight:700;width:100%}
+</style>
+</head>
+<body>
+<h1>📷 Bild-Diagnose</h1>
+<p>Diese Seite testet, welche Bilder auf Ihrem Gerät geladen werden können. Bitte machen Sie einen Screenshot der ganzen Seite nach dem Laden.</p>
+
+<div class="info" id="info">
+  <div>User-Agent: <b id="ua">—</b></div>
+  <div>Zeit: <b id="time">—</b></div>
+  <div>Verbindung: <b id="conn">—</b></div>
+</div>
+
+<div class="grid" id="grid"></div>
+
+<div class="summary pending" id="summary">⏳ Teste läuft …</div>
+
+<button onclick="location.reload()">🔄 Neu laden</button>
+
+<script>
+const IMAGES=[
+  {src:'assets/logo.png',label:'logo.png'},
+  {src:'assets/qr_instagram.png',label:'qr.png'},
+  {src:'assets/favicon-512.png',label:'favicon-512'},
+  {src:'datas/medya/cache_88701523.jpg',label:'cache_...23'},
+  {src:'datas/medya/cache_88701528.jpg',label:'cache_...28'},
+  {src:'datas/medya/cache_88701530.jpg',label:'cache_...30'},
+  {src:'datas/medya/cache_88701534.jpg',label:'cache_...34'},
+  {src:'datas/medya/thumb_88701530.jpg',label:'thumb_...30'}
+];
+
+document.getElementById('ua').textContent=navigator.userAgent;
+document.getElementById('time').textContent=new Date().toLocaleString('de-DE');
+const c=navigator.connection||navigator.mozConnection||navigator.webkitConnection;
+document.getElementById('conn').textContent=c?(c.effectiveType+' · saveData:'+!!c.saveData):'—';
+
+const grid=document.getElementById('grid');
+let done=0,fail=0;
+IMAGES.forEach((it,i)=>{
+  const d=document.createElement('div');
+  d.className='item';
+  d.innerHTML='<div class="status pending" id="s'+i+'">⏳ Lädt …</div><div class="label">'+it.label+'</div>';
+  const img=document.createElement('img');
+  const start=Date.now();
+  img.onload=function(){
+    const ms=Date.now()-start;
+    document.getElementById('s'+i).className='status ok';
+    document.getElementById('s'+i).textContent='✅ OK ('+ms+'ms)';
+    done++;check();
+  };
+  img.onerror=function(){
+    document.getElementById('s'+i).className='status fail';
+    document.getElementById('s'+i).textContent='❌ FAIL';
+    done++;fail++;check();
+  };
+  img.src=it.src+'?t='+Date.now();
+  d.appendChild(img);
+  grid.appendChild(d);
+});
+function check(){
+  if(done===IMAGES.length){
+    const s=document.getElementById('summary');
+    if(fail===0){s.className='summary allok';s.textContent='✅ ALLE '+IMAGES.length+' BILDER OK — Problem woanders';}
+    else{s.className='summary anyfail';s.textContent='❌ '+fail+' von '+IMAGES.length+' Bildern konnten nicht geladen werden';}
+  }
+}
+setTimeout(function(){
+  IMAGES.forEach((it,i)=>{
+    const el=document.getElementById('s'+i);
+    if(el&&el.className.indexOf('pending')>-1){
+      el.className='status fail';el.textContent='❌ TIMEOUT (>15s)';
+      fail++;done++;
+    }
+  });
+  check();
+},15000);
+</script>
+</body>
+</html>
